@@ -13,6 +13,9 @@
   <!-- Custom CSS -->
   <link href="css/screen.css" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="css/search-box.css">
+  <link rel="stylesheet" type="text/css" href="css/search-box-css.css">
+
   <!-- Custom Fonts -->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
@@ -21,6 +24,19 @@
 <script src="scripts/framework/jquery-2.1.4.min.js"></script>
 <script src="scripts/framework/bootstrap-3.1.1.min.js"></script>
 <script src="scripts/framework/travelGeeks.js"></script>
+
+    <script async="" src="scripts/framework/cbgapi.loaded_2"></script>
+	<script async="" src="scripts/framework/cbgapi.loaded_1"></script>
+	<script async="" src="scripts/framework/cbgapi.loaded_0"></script>
+	<script gapi_processed="true" src="scripts/framework/clientplusone.js" async="" type="text/javascript"></script>
+	<script src="scripts/framework/fbds.js" async=""></script>
+	<script src="scripts/framework/analytics.js" async="" type="text/javascript"></script>
+	<script id="undefined" src="scripts/framework/inpage_linkid.js" async="" type="text/javascript"></script>
+	<script src="scripts/framework/gtm.js" async=""></script>
+	<script type="text/javascript"></script>
+	<script src="scripts/framework/dc.js" async="" type="text/javascript"></script>
+	<script async="" src="scripts/framework/tracking.js"></script>
+	
 <!--script src="scripts/framework/map.js"></script-->
 
 <!-- Custom Theme JavaScript -->
@@ -91,8 +107,128 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Travel Geeks</h1>
-                        <p class="intro-text">Coming Soon. . .</p>
+                        <h1 class="brand-heading">Travel Venture</h1>
+                        <div id="search_main_container" class="full_search wrapper plr20 ">
+							<div id="search_bar_wrapper" class="search_bar" role="form">
+								<div class="search_type left col-l-4 col-s-16 col-m-4 plr0i">
+									<div id="location_contianer" class="left">
+										<div id="location_pretext">
+										<div class="l-pre-1" role="link" aria-label="Please type a location" aria-describedby="location_input_sp" tabindex="0" aria-flowto="explore-location-suggest">
+											<span class="location_placeholder" data-icon="L">
+											</span> <span id="location_input_sp" class="location_input_sp">Pune</span><span class="right location-dropdown" data-icon="•"></span></div>
+											<div class="l-pre-2 hidden"><span class="location_placeholder" data-icon="L">
+											<label class="hdn" id="label_search_location">Please type a location</label>
+											<input id="location_input" role="combobox" aria-labelledby="label_search_location" aria-expanded="true" aria-autocomplete="list" aria-owns="explore-location-suggest" placeholder="Please type a location"></span></div>
+										</div>
+										<!-- Location drop down starts   -->
+										 <div role="listbox" id="explore-location-suggest" class="suggest-box start-steps clearfix">
+												<div id="location-all" class="item" data-entity_type="city" data-entity_id="5">All of Pune</div>
+												<ul id="location-recent" role="presentation">
+												  <li class="label ttupper">Recent Locations</li>
+												</ul>
+												<ul id="location-popular" role="presentation">
+												<li class="label ttupper">Popular Locations</li>
+													<li class="item grey-text " role="option" data-entity_type="subzone" data-entity_id="3307">Koregaon Park, Pune</li><li class="item grey-text " role="option" data-entity_type="subzone" data-entity_id="3207">Viman Nagar, Pune</li><li class="item grey-text " role="option" data-entity_type="subzone" data-entity_id="3419">Wakad, Pune</li>                        </ul>
+												<ul id="location-suggestion-container" role="presentation"></ul>
+											</div>
+
+										<!-- Location dro down ends   -->
+									</div>
+									<div class="clear"> </div>
+								</div>
+								<div class="left col-l-10 col-s-16 col-m-10 plr0i">
+									<div id="keywords_container" class="col-s-16">
+										<div id="keywords_pretext">
+											<div class="k-pre-1 hidden" style="height: 100%; overflow:hidden;">
+												<span class="search-bar-icon mr10" data-icon="ƹ"></span>
+
+												<div class="keyword_placeholder">
+													<div class="keyword_div">Search for attractions, places, events or more..</div>
+												</div>
+											</div>
+											<div class="k-pre-2  w100">
+												<span class="search-bar-icon mr5 ml5" data-icon="ƹ"></span>
+												<label id="label_search_res" class="hdn">Search for restaurant, cuisine or a dish</label>
+												<input role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="keywords-by" aria-labelledby="label_search_res" id="keywords_input" class="discover-search" placeholder="Search for attractions, places, events or more..">
+											</div>
+										</div>
+										<!-- keywords dro down starts   -->
+										<div id="explore-keywords-dropdown">
+											<div id="keywords-dd">
+												<ul id="keywords-by" role="listbox">
+												</ul>
+											</div>
+											<div class="keyword-search-start start-steps clearfix">
+												<div class="search-screen-block hidden">
+													<div class="screen-block-loader">
+														<img alt="" src="img/ajax-loader.gif">
+														<p>Coming right up...</p>
+													</div>
+												</div>
+												<ul id="no-results" class="hidden">
+													<li class="item no-result-found">
+														<a class="item">
+															<div class="keywords-dd-l">No results found</div>
+														</a>
+													</li>
+												</ul>
+
+												<ul id="explore-by">
+														<li class="label ttupper">Suggested Searches</li>
+															<li role="option" class="item" data-item_type="cat" data-item_id="1">
+															<div data-icon="d" class="start-step-label">
+																Attractions                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="cat" data-item_id="8">
+															<div data-icon="ĭ" class="start-step-label">
+																Events                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="cat" data-item_id="9">
+															<div data-icon="ϊ" class="start-step-label">
+																Landmarks and Locations                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="cat" data-item_id="10">
+															<div data-icon="ϋ" class="start-step-label">
+																Hotels                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="cat" data-item_id="3">
+															<div data-icon="b" class="start-step-label">
+																Nightlife                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="cat" data-item_id="6">
+															<div data-icon="É" class="start-step-label">
+																Cafés                                    
+															</div>
+														</li>
+														<li role="option" class="item" data-item_type="specials" data-item_id="23">
+															<div data-icon="Ï" class="start-step-label">
+																Restaurants &amp; Dining                                    
+															</div>
+														</li>
+													</ul>
+												</div>
+										</div>
+
+										<!-- keywords dro down ends   -->
+									</div>
+								</div>
+								<div class="right col-l-2 col-s-16 col-m-2 plr0i">
+									<div role="button" aria-flowto="search-start" tabindex="0" id="search_button" class="left ttupper btn btn--blue">
+										Search            
+									</div>
+									<div class="hidden search-button-loading left">
+										<img alt="" src="img/loading-transparent.gif" width="20">
+									</div>
+								</div>
+
+								<div class="clear"></div>
+							</div>
+						</div>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
